@@ -12,6 +12,12 @@ C/C ++ database arduino
 - ubuntu hangle setting.
 - vscode install
 - git install
+- sql workbench install - ubuntu
+- MySQL DBMS install - ubuntu
+- vscode mysql extension install
+- Chapter database Introduction
 ```shell
+
 sudo apt-get install.git
 git clone https://github.com/jinsung3/kuiotbigdataclass.git
+
