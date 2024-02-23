@@ -1,0 +1,1 @@
+INSERT INTO Customer VALUES (2, '김연아', '대한민국 서울', '000-6000-0001'); 
