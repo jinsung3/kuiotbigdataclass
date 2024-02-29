@@ -73,7 +73,49 @@ where Customer.custid=Orders.custid;
 -- 3-28 example
 select bookname from Book 
 where price = (
-select max(price)
-from Book);
+	select max(price)
+	from Book
+	where price < 15000);
 
 select * from Book;
+
+select max(price) from Book where price<15000;
+
+-- 3-29 example
+select name from Customer
+where custid in (select custid from Orders);
+
+select * from Customer;
+
+-- 3-30 example
+select name
+from Customer
+where custid in(select custid
+				from Orders
+				where bookid in(select bookid
+								from Book
+                                where publisher='대한미디어')
+				);
+                
+-- 3-31 example
+select b1.bookname, b1.publisher, b1.price
+from Book b1
+where b1.price > (select avg(b2.price)
+				from Book b2 
+                where b2.publisher = b1.publisher);
+
+select publisher, avg(price) from Book group by publisher;
+
+-- 3-32 example
+select name from Customer where address like '대한민국%'
+union all
+select orderdate from Orders where custid in (select custid from Orders);
+    
+-- 3-33 example
+select name, address
+from Customer cs
+where exists (	select *
+				from Orders od
+                where cs.custid=od.custid);
+    
+
