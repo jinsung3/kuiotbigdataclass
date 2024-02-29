@@ -2,13 +2,13 @@
 	
 int main(void)
 {	int width, height;
-	double area = 1 / 2 * width * height;
+	double area;
 	scanf("%d", &width);
-	scanf("%d", &heith);
+	scanf("%d", &height);
 	
-	double area = 1 / 2 * width * height;
+	area = 1.0 / 2.0 * width * height;
 
-	printf("area: %/1f\n", area);
+	printf("area: %.1f\n", area);
 
 	return 0;
 }
