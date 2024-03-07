@@ -32,3 +32,15 @@ where orderdate = str_to_date('20240707', '%Y%m%d');
 
 select orderid, date_format(orderdate, '%Y-%m-%d'), custid, bookid from Orders
 where orderdate = str_to_date('20240707', '%Y%m%d');
+
+
+use madangdb;
+create table Mybook(
+	bookid int primary key,
+    price int);
+insert into Mybook(bookid, price) value (1, 10000);
+insert into Mybook(bookid, price) value (2, 20000);
+insert into Mybook(bookid, price) value (3, null);
+
+select price + 100 from Mybook where bookid=3;
+
