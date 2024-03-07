@@ -60,28 +60,6 @@ ___
   - 우분투 방화벽에 전체 포트 열기
   - 우분투 DBMS에 임의의 데이터 넣고 윈도우에서 확인
 
-___
-
-## 2024-02-29
-___
-
-제작 과정 설명
-리눅스용 cmake 만들기
-전처리 어셈블리 바이너리 링크
-활동을 하다
-기본적으로
-여러개 등록
-연속 실행
-플래시 가능 포럼
-활용
-3장 이어서 진행
-4장 내장함수
-SQL 내장함수
-숫자함수
-문자열 문자열
-날짜 표기
-주제
-
 
 ---
 
@@ -126,20 +104,6 @@ SQL 내장함수
 
 - mysql 내장 함수
   - null ifnull
-- 외래키 확인 및 삭제 방법
-```sql
-set sql_safe_updates=0;
--- 무시하고 삭제
-SET foreign_key_checks = 0;
-delete from Customer;
-SET foreign_key_checks = 1;
-
--- 제약 조건 확인
-select * from information_schema.table_constraints where table_name = 'Orders';
-
--- 확인된 제약 조건으로 외래키 삭제
-alter table Orders drop foreign key Orders_ibfk_2;
-```
 - 부속질의
   - select 부속질의 (스칼라 부속질의)
   - from 부속질의 ( 인라인 뷰)
