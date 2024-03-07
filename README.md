@@ -30,6 +30,7 @@ C/C ++ database arduino
 - 데이터 조작어
 
 ___
+
 ## 2024-02-23
 ___
 
@@ -60,6 +61,7 @@ ___
   - 우분투 DBMS에 임의의 데이터 넣고 윈도우에서 확인
 
 ___
+
 ## 2024-02-29
 ___
 
@@ -81,6 +83,81 @@ SQL 내장함수
 주제
 
 
+---
+
+## 2024-02-29
+
+---
+
+- 빌드 과정 설명
+  - make cmake for linux
+  - 전처리 어셈블리 바이너리 링크
+- make 실습
+  - 기본 문법
+  - 여러개 명령어 등록
+  - 연속 실행
+  - 생략 가능 명령어
+  - 변수 사용
+- 3장 끝까지 진행
+  - DML
+    - select 
+      - where, group by, having, order by
+  - DDL
+    - create, alter, drop
+  - DCL
+    - insert, update, delete
+- 4장 내장함수
+  - SQL 내장함수
+    - 숫자함수
+      - abs, ceil, floor, round, sign...
+    - 문자열 함수
+      - concat, replace, substr, length...
+    - 날짜 함수
+      - str_to_date, date_format, adddate, sysdate...
+      - format 형식 %Y-%m-%d %H:%i:%s ...
+
+
+---
+
+## 2024-03-07
+
+---
+
+
+- mysql 내장 함수
+  - null ifnull
+- 외래키 확인 및 삭제 방법
+```sql
+set sql_safe_updates=0;
+-- 무시하고 삭제
+SET foreign_key_checks = 0;
+delete from Customer;
+SET foreign_key_checks = 1;
+
+-- 제약 조건 확인
+select * from information_schema.table_constraints where table_name = 'Orders';
+
+-- 확인된 제약 조건으로 외래키 삭제
+alter table Orders drop foreign key Orders_ibfk_2;
+```
+- 부속질의
+  - select 부속질의 (스칼라 부속질의)
+  - from 부속질의 ( 인라인 뷰)
+  - where 부속질의
+    - 단일 - 비교 ( =, >, <, >=, <=, !=, <>, is null, is not null) [비교]
+    - 다수의 열, 단일 행 ( all, some, any) [한정]
+    - 다수의 행, 다수의 열 ( in, not in, exists, not exists)[집합, 존재]
+- 뷰
+  - 뷰 생성 - create view 뷰이름 as select ...
+  - 뷰 삭제 - drop view 뷰이름
+  - 뷰 수정 - create or replace view 뷰이름 as select ...
+- 인덱스
+  - 인덱스 생성 - create index 인덱스이름 on 테이블이름(열이름)
+  - 인덱스 삭제 - drop index 인덱스이름 on 테이블이름
+  - 인덱스 재구성 - analyze table 테이블이름
+
+
 ```shell
+
 sudo apt-get install.git
 git clone https://github.com/jinsung3/kuiotbigdataclass.git
