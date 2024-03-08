@@ -30,7 +30,7 @@ int main(){
     while(row = mysql_fetch_row(res)){
         printf("%s\t", row[0]);
         printf("%s\t", row[1]);
-        printf("%s\t", row[2]);.
+        printf("%s\t", row[2]);
         printf("%s\t\n", row[3]);
     }
     mysql_close(conn);

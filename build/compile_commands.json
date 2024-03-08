@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/kjs0902/kuiotbigdataclass/build",
+  "command": "/usr/bin/gcc  -I/usr/include/mysql -g -o CMakeFiles/booklist.dir/booklist.c.o -c /home/kjs0902/kuiotbigdataclass/python_C_mysql/booklist.c",
+  "file": "/home/kjs0902/kuiotbigdataclass/python_C_mysql/booklist.c"
+}
+]

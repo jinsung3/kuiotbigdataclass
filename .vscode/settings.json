@@ -75,5 +75,5 @@
         "mysql.h": "c"
     },
     //cmake source folder
-    "cmake.sourceDirectory": "${workspaceFolder}/C++/chap1/2-2",
+    "cmake.sourceDirectory": "/home/kjs0902/kuiotbigdataclass/python_C_mysql",
 }
