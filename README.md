@@ -138,7 +138,6 @@ ___
   - C Api documentation
   - https://dev.mysql.com/doc/c-api/en/
 
-```
 - CMake
   - 설치 sudo apt-get install cmake
   - 실습
