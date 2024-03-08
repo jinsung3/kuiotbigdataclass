@@ -6,6 +6,7 @@ project(booklist)
 
 find_library(MYSQL mysqlclient)
 # add the excutable
-add_ excutable(${PROJECT_NAME} booklist.c)
+add_executable(${PROJECT_NAME} booklist.c)
 target_include_directories(${PROJECT_NAME} PUBLIC /usr/include/mysql)
 target_link_libraries(${PROJECT_NAME} ${MYSQL})
+
