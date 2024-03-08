@@ -126,6 +126,71 @@ ___
     - before, after (insert, update, delete)
   - function (사용자 정의)
 
+
+  ---
+## 2024-03-8
+---
+
+- C 프로그램 ( C API mysql.h 라이브러리 활용)
+  - C Api documentation
+  
+```c
+#include <stdio.h>
+#include <mysql.h>
+#include <string.h>
+// sudo apt install libmysql++*
+int main(){
+    MYSQL *conn;
+    MYSQL_RES *res;
+    MYSQL_ROW row;
+    char *host = "localhost";
+    char *user = "root";
+    char *passwd = "0000";
+    char *db = "madangdb";
+    char query[255];
+    int port = 3306;
+
+    strcpy(query, "select * from Book");
+
+    conn = mysql_init(NULL);
+    if(mysql_real_connect(conn, host, user, passwd, db, port, NULL, 0)){
+        printf("MySQL 연결 성공\n");
+    }else{
+        printf("MySQL 연결 실패\n");
+    }
+
+    if(mysql_query(conn, query)){
+        printf("쿼리 실패\n");
+    }
+
+    res = mysql_store_result(conn);
+    while(row = mysql_fetch_row(res)){
+        printf("%s\t", row[0]);
+        printf("%s\t", row[1]);
+        printf("%s\t", row[2]);
+        printf("%s\t\n", row[3]);
+    }
+    mysql_close(conn);
+    return 0;
+}
+
+```
+- CMake
+  - 설치 sudo apt-get install cmake
+  - 실습
+    - CMakeLists.txt 작성
+    - mkdir build && cd build
+    - cmake ..
+    - make
+    - ./실행파일
+- VsCode 디버깅 설정
+- flask
+  - 설치 sudo apt-get install python3-flask, pip3 install flask
+  - 실습
+    - app.py 작성
+    - python3 app.py
+    - 브라우저에서 localhost:5000 접속
+
 ```shell
 
 sudo apt-get install.git
