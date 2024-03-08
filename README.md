@@ -127,13 +127,16 @@ ___
   - function (사용자 정의)
 
 
-  ---
-## 2024-03-8
 ---
+
+## 2024-03-8
+
+---
+
 
 - C 프로그램 ( C API mysql.h 라이브러리 활용)
   - C Api documentation
-  
+
 ```c
 #include <stdio.h>
 #include <mysql.h>
